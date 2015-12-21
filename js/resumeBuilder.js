@@ -11,68 +11,66 @@ $('#header').append(formattedRole);
 
 var skills = ["html5","javascript","css","jquery","bootstrap","git","tcl","perl","python","Sql"];
 
-var bio = {"name" : bioName,
-            "role" : role,
-            "contacts" : {
-                		  mobile: "813-546-0492",
-                  		  email: "spmenon30@gmail.com",
-                  		  github: "30mps",
-                          twitter: "spme30",
-                          location: "Seattle"},
-            "welcomeMessage": "Welcome to my page! While you are here  check my skills .",
-            "skills": skills,
-            "biopic": "images/smitha.jpg"
+var bio = {
+	"name": bioName,
+	"role": role,
+	"contacts": {
+		"mobile": "813-546-0492",
+		"email": "spmenon30@gmail.com",
+		"github": "30mps",
+		"twitter": "spme30",
+		"location": "Seattle"
+	},
+	"welcomeMessage": "Welcome to my page! While you are here  check my skills .",
+	"skills": skills,
+	"biopic": "images/smitha.jpg"
 };
       //     display: function taking no parameters
 
 
 
- var education = {"schools": [{
-                    "name": "University of Washington Professional and Continuing Education",
-                    "location": "Seattle, WA",
-                    "degree": "Certificate",
-                     "majors": ["Cloud Data Management & Analytics"],
-                     "dates": "2014",
-                     "url": "http://www.pce.uw.edu/certificates/cloud-data-management-analytics.html"
-                     },
-                     {
-                    "name": "Bellevue College",
-                    "location": "Bellevue, WA",
-                    "degree": "Certificate",
-                     "majors": ["Business Intelligence Developer Certificate"],
-                     "dates": "2011",
-                     "url": "http://www.bellevuecollege.edu/programs/degrees/proftech/busit/"
-                     },
-                     {
-                    "name": "Center for Development of Advanced Computing",
-                    "location": "Karad, India",
-                    "degree": "Diploma",
-                     "majors": ["Diploma in Advanced Computing"],
-                     "dates": "1999",
-                     "url": "http://cdac.in/index.aspx?id=DAC&courseid=0"
-                     },
-                     {
-                    "name": "University of Pune",
-                    "location": "Pune",
-                    "degree": "Bachelors in Engineering",
-                     "majors": ["Electronics and Telecommunication"],
-                     "dates": "1998",
-                     "url": "http://cumminscollege.org/about-engineering-college/engineering-college/"
-                     }],
-            	  "onlineCourses": [{
-                 	  "title": "Nanodegree Front End Web Developer",
-                 	  "school": "Udacity",
-                      "date": "Current",
-                      "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
-                      },
-                      {
-                 	  "title": "How to Use Git and GitHub",
-                 	  "school": "Udacity",
-                      "date": "2015",
-                      "url": "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
-                      }
-                  ]
-               };
+ var education = {
+	"schools": [{
+		"name": "University of Washington Professional and Continuing Education",
+		"location": "Seattle, WA",
+		"degree": "Certificate",
+		"majors": ["Cloud Data Management & Analytics"],
+		"dates": "2014",
+		"url": "http://www.pce.uw.edu/certificates/cloud-data-management-analytics.html"
+	}, {
+		"name": "Bellevue College",
+		"location": "Bellevue, WA",
+		"degree": "Certificate",
+		"majors": ["Business Intelligence Developer Certificate"],
+		"dates": "2011",
+		"url": "http://www.bellevuecollege.edu/programs/degrees/proftech/busit/"
+	}, {
+		"name": "Center for Development of Advanced Computing",
+		"location": "Karad, India",
+		"degree": "Diploma",
+		"majors": ["Diploma in Advanced Computing"],
+		"dates": "1999",
+		"url": "http://cdac.in/index.aspx?id=DAC&courseid=0"
+	}, {
+		"name": "University of Pune",
+		"location": "Pune",
+		"degree": "Bachelors in Engineering",
+		"majors": ["Electronics and Telecommunication"],
+		"dates": "1998",
+		"url": "http://cumminscollege.org/about-engineering-college/engineering-college/"
+	}],
+	"onlineCourses": [{
+		"title": "Nanodegree Front End Web Developer",
+		"school": "Udacity",
+		"date": "Current",
+		"url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+	}, {
+		"title": "How to Use Git and GitHub",
+		"school": "Udacity",
+		"date": "2015",
+		"url": "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
+	}]
+};
 
                   //display: function taking no parameters}]
 
