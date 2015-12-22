@@ -111,6 +111,26 @@ var work = {
 //	display: function taking no parameters
 
 
+var projects =  [{
+ 	"title": "AWCPS mockup pages",
+ 	"dates": "2015",
+ 	"description": "Created mockup pages for AWCPS",
+ 	"images": ["http://spinsight.github.io/awcps/index-test.html" , "http://spinsight.github.io/awcps/home.html"]
+ }, {
+ 	"title": "Portfolio Site",
+ 	"dates": "2015",
+ 	"description": "A mockup responsive website that will display images, descriptions and links to portfolio projects.",
+ 	"images": ["http://30mps.github.io/portfolio-site/"]
+ } /*, {
+ 	"title": "",
+ 	"dates": "",
+ 	"description": "",
+ 	"images": [""]
+ } */
+
+ ];
+
+//display: function taking no parameters
 //$('#main').append(bio.name);
 
 
