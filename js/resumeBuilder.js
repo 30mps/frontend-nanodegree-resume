@@ -120,50 +120,85 @@ var work = {
 	}]
 };
 
-//	display: function taking no parameters
 
+//Work experience display: function taking no parameters
+function displayWork() {
 
-//Work entry
-// for-in loop that iterates through all the jobs in work object
-for(job in work.jobs) {
+	// for-in loop that iterates through all the jobs in work object
+	for(job in work.jobs) {
 
-	 // append a new HTMLworkStart object from helper.js for each job
-	 $('#workExperience').append(HTMLworkStart);
+		 // append a new HTMLworkStart object from helper.js for each job
+		 // create a new div with class work-entry for work experience
+		 $('#workExperience').append(HTMLworkStart);
 
-	 // format each job's employer an title with HTMLworkEmployer and HTMLworkTitle respectively
-     var emp  = HTMLworkEmployer.replace('%data%',work.jobs[job].employer);
-     var workTitle = HTMLworkTitle.replace('%data%',work.jobs[job].title)
+		 // format each job's employer an title with HTMLworkEmployer and HTMLworkTitle respectively
+	     var emp  = HTMLworkEmployer.replace('%data%',work.jobs[job].employer);
+	     var workTitle = HTMLworkTitle.replace('%data%',work.jobs[job].title)
 
-     // format each job's employer an title with HTMLworkDates and HTMLworkDescription respectively
-     var workDate = HTMLworkDates.replace('%data%',work.jobs[job].dates);
-     var workDesc = HTMLworkDescription.replace('%data%',work.jobs[job].description)
+	     // format each job's employer an title with HTMLworkDates and HTMLworkDescription respectively
+	     var workDate = HTMLworkDates.replace('%data%',work.jobs[job].dates);
+	     var workDesc = HTMLworkDescription.replace('%data%',work.jobs[job].description)
 
-     //append  concatenation of employee , workTitle, workDate and WorkDesc for each job to the last element in class work-entry
-     $('.work-entry:last').append(emp + workTitle + workDate + workDesc);
+	     //append  concatenation of employee , workTitle, workDate and WorkDesc for each job to the last element in class work-entry
+	     $('.work-entry:last').append(emp + workTitle + workDate + workDesc);
 
+	}
 }
 
+// Invoke function to display work experience on resume page
+displayWork();
 
 var projects =  [{
  	"title": "AWCPS mockup pages",
  	"dates": "2015",
  	"description": "Created mockup pages for AWCPS",
- 	"images": ["http://spinsight.github.io/awcps/index-test.html" , "http://spinsight.github.io/awcps/home.html"]
+ 	"images": ["http://spinsight.github.io/awcps/index-test.html" , "http://spinsight.github.io/awcps/home.html"],
  }, {
  	"title": "Portfolio Site",
  	"dates": "2015",
  	"description": "A mockup responsive website that will display images, descriptions and links to portfolio projects.",
- 	"images": ["http://30mps.github.io/portfolio-site/"]
- } /*, {
+ 	"images": ["http://30mps.github.io/portfolio-site/"],
+ }
+];
+
+/*, {
  	"title": "",
  	"dates": "",
  	"description": "",
  	"images": [""]
  } */
 
- ];
+// Encapsulate display within the projects object
+projects.display  = function() {
 
-//display: function taking no parameters
-//$('#main').append(bio.name);
+	for (var project in projects)  {
+
+		// the dispaly function is the 3rd element in the projects and the for loop was iterating through it to give an undefined element. So put the if condition to check if the title exists
+		if (projects[project].title != undefined) {
+
+			// append a new HTMLprojectStart object from helper.js for each project
+	   // create a new div with class project-entry for each project
+		$("#projects").append(HTMLprojectStart);
+
+		// format each projects's title with HTMLprojectEmployer , dates HTMLprojectDates , description with HTMLprojectDescription and images with HTMLprojectImages
+			var pTitle = HTMLprojectTitle.replace('%data%',projects[project].title);
+			var pDates = HTMLprojectDates.replace('%data%',projects[project].dates);
+			var pDesc = HTMLprojectDescription.replace('%data%',projects[project].description);
+
+			//TODO - put actual images in the array
+			// Looping through the images array.
+			var pImg = "";
+			for(j=0 ; j < projects[project].images.length; j++) {
+				// concatenating the formatted images
+				pImg = pImg + HTMLprojectImage.replace('%data%',projects[project].images[j]);
+			}
+
+			$('.project-entry:last').append(pTitle + pDates + pDesc + pImg);
+		}
+	}
+};
+
+projects.display();
+
 
 
