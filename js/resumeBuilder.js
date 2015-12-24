@@ -90,31 +90,31 @@ var work = {
 	"jobs": [{
 		"employer": "AWCPS",
 		"title": "Webmaster",
-		"location": "Telecommute",
+		"location": "Bellevue, WA",
 		"dates": "October 2015 - Current",
 		"description": "Understand requirements for AWC web presence and social media outreach, review current strategy and chart alternate strategy recommendation based on AWC requirements. "
 	}, {
 		"employer": "University of Washington",
 		"title": "Teaching/Lab Assistant, Continuing Education",
-		"location": "Seattle",
+		"location": "Seattle, WA",
 		"dates": "May 2015 - Current",
 		"description": "Teaching Assistant for the multiple UW courses: 'HTML5, CSS3 & Responsive Design for Web Development' and 'Supporting Scalable Analytics in Cloud'.  Responsible for managing online student interactions during class, assisting the professor in evaluating assignments, setting up and conducting online lecture sessions in coordination with facilities, and helping students troubleshoot issues with courseware."
 	}, {
 		"employer": "Netcore Solutions",
 		"title": "Project Lead",
-		"location": "Mumbai",
+		"location": "Mumbai, India",
 		"dates": "Feb 2005 - June 2006",
 		"description": "Led software development lifecycle for an in-house mobile CMS (content management) site. Managed stakehol ders, development team, product roadmap and delivered software releases. Advocated open source web technologies for building the product. Performed requirement analysis, prototyping, effort estimation, usability design and data modeling for product. "
 	}, {
 		"employer": "Softcell Technologies",
 		"title": "Software Engineer",
-		"location": "Pune",
+		"location": "Pune, India",
 		"dates": "Sep 2002 - Nov 2003",
 		"description": "Transitioned paper-based work flow and inventory management to an automated web-based business process with security roles, permissions, workflows and email activity alerts. Responsible for documenting requirements, project scope, schedules, database design and technology implementation using - Java, JDBC, JSP, JavaScript, HTML, Oracle 9i, Apache on Linux systems. "
 	}, {
 		"employer": "Thinking Minds Inc.",
 		"title": "Software Engineer",
-		"location": "Nashik",
+		"location": "Nashik, India",
 		"dates": "Jan 2000 - Sep 2002",
 		"description": "Built custom reports for student administration for University of Rhode Island using Peoplecode and PeopleSoft Designer.  Built system to boost search engine rankings using doorway pages. Built company website using -- TCL, Oracle, ACS Web Framework. "
 	}]
@@ -200,5 +200,5 @@ projects.display  = function() {
 
 projects.display();
 
-
+$('#mapDiv').append(googleMap);
 
