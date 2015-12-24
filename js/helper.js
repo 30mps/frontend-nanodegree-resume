@@ -154,6 +154,7 @@ function initializeMap() {
     var lat = placeData.geometry.location.lat();  // latitude from the place service
     var lon = placeData.geometry.location.lng();  // longitude from the place service
     var name = placeData.formatted_address;   // name of the place from the place service
+    name = "<div id='overlayId'>" + name + "</div>";
     var bounds = window.mapBounds;            // current boundaries of the map window
 
     // marker is an object with additional data about the pin for a single location
@@ -168,11 +169,14 @@ function initializeMap() {
     // about a location.
     var infoWindow = new google.maps.InfoWindow({
       content: name
-    });
 
-    // hmmmm, I wonder what this is about...
+    });
+0
+    // Add an overlay with the name of each city that will appear when a user clicks on your map.
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+      //display overlays
+      //console.log(infoWindow)
+      infoWindow.open(map, marker);
     });
 
     // this is where the pin actually gets added to the map.
