@@ -110,7 +110,45 @@ bio.display();
 	}]
 };
 
-                  //display: function taking no parameters}]
+
+
+education.display = function() {
+	// for-in loop that iterates through all the schools and online courses in education object
+	for(school in education.schools) {
+
+		 // append a new HTMLschoolStart div from helper.js for each school
+		 // create a new div with class education-entry for school attended
+		 $('#education').append(HTMLschoolStart);
+
+		 // format each schools's  name,degree, dates, loaction and major
+	     var schoolName  = HTMLschoolName.replace('%data%',education.schools[school].name);
+	     var schoolDegree = HTMLschoolDegree.replace('%data%',education.schools[school].degree);
+	     var schoolDates = HTMLschoolDates.replace('%data%',education.schools[school].dates);
+	     var schoolLocation = HTMLschoolLocation.replace('%data%',education.schools[school].location)
+         var schoolMajor = "";
+         for (major in education.schools[school].majors) {
+         	schoolMajor = HTMLschoolMajor.replace('%data%',education.schools[school].majors[major]);
+         }
+	     //append  concatenation of strings of schools's  name,degree, dates, loaction and major
+	     $('.education-entry:last').append(schoolName + schoolDegree + schoolDates + schoolLocation + schoolMajor);
+
+	}
+
+	$('.education-entry:last').append(HTMLonlineClasses);
+
+	// for-in loop that iterates through all th online courses
+	for(course in education.onlineCourses) {
+
+ 		var onlineTitle = HTMLonlineTitle.replace('%data%',education.onlineCourses[course].title);
+ 		var onlineSchool = HTMLonlineSchool.replace('%data%',education.onlineCourses[course].school);
+ 		var onlineDate = HTMLonlineDates.replace('%data%',education.onlineCourses[course].date);
+		var onlineUrl = HTMLonlineURL.replace('%data%',education.onlineCourses[course].url) ;
+		$('.education-entry:last').append(onlineTitle + onlineSchool + onlineDate + onlineUrl);
+	};
+
+};
+
+education.display();
 
 var work = {
 	"jobs": [{
@@ -153,7 +191,7 @@ work.display = function() {
 	// for-in loop that iterates through all the jobs in work object
 	for(job in work.jobs) {
 
-		 // append a new HTMLworkStart object from helper.js for each job
+		 // append a new HTMLworkStart  div from helper.js for each job
 		 // create a new div with class work-entry for work experience
 		 $('#workExperience').append(HTMLworkStart);
 
