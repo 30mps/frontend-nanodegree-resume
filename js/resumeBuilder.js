@@ -27,6 +27,18 @@ var bio = {
 };
       //     display: function taking no parameters
 
+    // Skill summary at a glance
+    //Check if there are skills in the bio object
+    if(bio.skills.length > 0) {
+    	//append HTMLskillsstart declared in helper.js to the div with id=header
+    	$('#header').append(HTMLskillsStart);
+    	for (i=0; i < bio.skills.length; i++) {
+    		// Use HTMLskills from helper.js to format each skill in a <li>
+			var skillElement =  HTMLskills.replace('%data%',bio.skills[i]);
+			// Append each formatted skill to the <ul> tag with id=header in the HTMLskillsStart variable
+			$('#skills').append(skillElement);
+		}
+    }
 
 
  var education = {
@@ -82,8 +94,8 @@ var work = {
 		"dates": "October 2015 - Current",
 		"description": "Understand requirements for AWC web presence and social media outreach, review current strategy and chart alternate strategy recommendation based on AWC requirements. "
 	}, {
-		"employer": "University of Washington, Continuing Education",
-		"title": "Teaching/Lab Assistant",
+		"employer": "University of Washington",
+		"title": "Teaching/Lab Assistant, Continuing Education",
 		"location": "Seattle",
 		"dates": "May 2015 - Current",
 		"description": "Teaching Assistant for the multiple UW courses: 'HTML5, CSS3 & Responsive Design for Web Development' and 'Supporting Scalable Analytics in Cloud'.  Responsible for managing online student interactions during class, assisting the professor in evaluating assignments, setting up and conducting online lecture sessions in coordination with facilities, and helping students troubleshoot issues with courseware."
@@ -109,6 +121,27 @@ var work = {
 };
 
 //	display: function taking no parameters
+
+
+//Work entry
+// for-in loop that iterates through all the jobs in work object
+for(job in work.jobs) {
+
+	 // append a new HTMLworkStart object from helper.js for each job
+	 $('#workExperience').append(HTMLworkStart);
+
+	 // format each job's employer an title with HTMLworkEmployer and HTMLworkTitle respectively
+     var emp  = HTMLworkEmployer.replace('%data%',work.jobs[job].employer);
+     var workTitle = HTMLworkTitle.replace('%data%',work.jobs[job].title)
+
+     // format each job's employer an title with HTMLworkDates and HTMLworkDescription respectively
+     var workDate = HTMLworkDates.replace('%data%',work.jobs[job].dates);
+     var workDesc = HTMLworkDescription.replace('%data%',work.jobs[job].description)
+
+     //append  concatenation of employee , workTitle, workDate and WorkDesc for each job to the last element in class work-entry
+     $('.work-entry:last').append(emp + workTitle + workDate + workDesc);
+
+}
 
 
 var projects =  [{
