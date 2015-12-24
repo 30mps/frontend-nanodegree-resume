@@ -6,8 +6,6 @@ var role = "Web Developer";
 var formattedName =  HTMLheaderName.replace('%data%',bioName);
 var formattedRole =  HTMLheaderRole.replace('%data%',role);
 
-$('#header').prepend(formattedName);
-$('#header').append(formattedRole);
 
 var skills = ["html5","javascript","css","jquery","bootstrap","git","tcl","perl","python","Sql"];
 
@@ -25,21 +23,49 @@ var bio = {
 	"skills": skills,
 	"biopic": "images/smitha.jpg"
 };
-      //     display: function taking no parameters
 
-    // Skill summary at a glance
+ //  Encapsulate display of bio object in a function taking no parameters
+ bio.display = function() {
+
+    // Used prepend method in this order to create the design as shown in the sample page
+    $('#header').prepend(formattedRole);
+ 	$('#header').prepend(formattedName);
+
+ 	//Creating contaDetail string using generic HTML contact string from helper.js
+    var contactDetail = "";
+    for (var info in bio.contacts) {
+    	var contact = HTMLcontactGeneric.replace('%contact%',info);
+    	contactDetail = contactDetail + contact.replace('%data%',bio.contacts[info]);
+    }
+
+    //Adding contact information to top header
+    $('#topContacts').append(contactDetail);
+    //Adding contact information to bottom footer
+    $('#footerContacts').append(contactDetail);
+
+ 	//Adding bio photo and welcome message to resume
+	$('#header').append(HTMLbioPic.replace('%data%',bio.biopic));
+    $('#header').append(HTMLwelcomeMsg.replace('%data%',bio.welcomeMessage));
+
+     // Skill summary at a glance
     //Check if there are skills in the bio object
     if(bio.skills.length > 0) {
     	//append HTMLskillsstart declared in helper.js to the div with id=header
     	$('#header').append(HTMLskillsStart);
+
     	for (i=0; i < bio.skills.length; i++) {
     		// Use HTMLskills from helper.js to format each skill in a <li>
 			var skillElement =  HTMLskills.replace('%data%',bio.skills[i]);
 			// Append each formatted skill to the <ul> tag with id=header in the HTMLskillsStart variable
 			$('#skills').append(skillElement);
 		}
-    }
 
+
+
+    }
+};
+
+bio.display();
 
  var education = {
 	"schools": [{
@@ -122,7 +148,7 @@ var work = {
 
 
 //Work experience display: function taking no parameters
-function displayWork() {
+work.display = function() {
 
 	// for-in loop that iterates through all the jobs in work object
 	for(job in work.jobs) {
@@ -143,10 +169,10 @@ function displayWork() {
 	     $('.work-entry:last').append(emp + workTitle + workDate + workDesc);
 
 	}
-}
+};
 
 // Invoke function to display work experience on resume page
-displayWork();
+work.display();
 
 var projects =  [{
  	"title": "AWCPS mockup pages",
@@ -200,5 +226,6 @@ projects.display  = function() {
 
 projects.display();
 
+//Include interactive google map
 $('#mapDiv').append(googleMap);
 
