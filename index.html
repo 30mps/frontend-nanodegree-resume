@@ -17,13 +17,14 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 <head>
   <!-- This tells the browser how to read the document. -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- Tells the browser what the title of this page should be. -->
   <title>Resume</title>
 
   <!--By Smitha -  Bootstrap link from CDN network to make resume page reposnive -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
+  <!-- By Smitha - Adding font awesome-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Load the page styles. -->
   <link href="css/style.css" rel="stylesheet" type="text/css">
 
@@ -53,13 +54,16 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   Google Map to your resume!
   -->
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
-
-  <meta name="viewport" content="width=device-width">
+ <!--By Smitha  - Responsive page as part of Bootstrap -->
+<!-- By Smitha - Commented this original line and added line below <meta name="viewport" content="width=device-width">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body unresolved>
-<div class="container-fluid">
-  <div id="main">
 
+<!--Added the container-fluid class div for Bootstrap -->
+<div class="container-fluid">
+
+  <div id="main">
 
     <!--
     Everything from here to the <script> tag below is the skeleton of your
