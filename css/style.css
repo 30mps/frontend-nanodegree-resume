@@ -219,3 +219,8 @@ span {
     display: block;
   }
 }
+
+/* By Smitha - Change icon color of font-awesome */
+.fa {
+  color: white;
+}
