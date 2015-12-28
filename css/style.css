@@ -207,11 +207,6 @@ span {
   padding-bottom: 5%;
 }
 
-/* Styled the overlay div */
-#overlayId {
-  background-color: yellow;
-  border-style: dotted;
-}
 
 @media only screen and (min-width: 750px) {
   #skillsH3,
@@ -219,6 +214,14 @@ span {
     display: block;
   }
 }
+
+
+/*By Smitha - Styled the overlay div */
+#overlayId {
+  background-color: yellow;
+  border-style: dotted;
+}
+
 
 /* By Smitha - Change icon color of font-awesome */
 .fa {
