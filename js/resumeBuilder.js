@@ -120,38 +120,40 @@
 
         // education object display method
         education.display = function() {
-            // for-in loop that iterates through all the schools and online courses in education object
-            for(var school in education.schools) {
+            // forEach loop that iterates through all the schools array in education object
+             education.schools.forEach(function(school) {
 
                  // append a new HTMLschoolStart div from helper.js for each school
                  // create a new div with class education-entry for school attended
                  $('#education').append(HTMLschoolStart);
 
                  // format each schools's  name,degree, dates, loaction and major
-                 var schoolName  = HTMLschoolName.replace(data,education.schools[school].name);
-                 var schoolDegree = HTMLschoolDegree.replace(data,education.schools[school].degree);
-                 var schoolDates = HTMLschoolDates.replace(data,education.schools[school].dates);
-                 var schoolLocation = HTMLschoolLocation.replace(data,education.schools[school].location)
+                 var schoolName  = HTMLschoolName.replace(data,school.name);
+                 var schoolDegree = HTMLschoolDegree.replace(data,school.degree);
+                 var schoolDates = HTMLschoolDates.replace(data,school.dates);
+                 var schoolLocation = HTMLschoolLocation.replace(data,school.location)
                  var schoolMajor = "";
-                 for (major in education.schools[school].majors) {
-                    schoolMajor = HTMLschoolMajor.replace(data,education.schools[school].majors[major]);
-                 }
+
+                 //Looping through the education majors array using forEach
+                 school.majors.forEach(function(major) {
+                    schoolMajor = HTMLschoolMajor.replace(data,major);
+                 });
+
                  //append  concatenation of strings of schools's  name,degree, dates, loaction and major
                  $('.education-entry:last').append(schoolName + schoolDegree + schoolDates + schoolLocation + schoolMajor);
 
-            }
+            });
 
             $('.education-entry:last').append(HTMLonlineClasses);
 
-            // for-in loop that iterates through all th online courses
-            for(var course in education.onlineCourses) {
-
-                var onlineTitle = HTMLonlineTitle.replace(data,education.onlineCourses[course].title);
-                var onlineSchool = HTMLonlineSchool.replace(data,education.onlineCourses[course].school);
-                var onlineDate = HTMLonlineDates.replace(data,education.onlineCourses[course].date);
-                var onlineUrl = HTMLonlineURL.replace(data,education.onlineCourses[course].url) ;
+            // forEach loop that iterates through all th online courses array
+            education.onlineCourses.forEach(function(course) {
+                var onlineTitle = HTMLonlineTitle.replace(data,course.title);
+                var onlineSchool = HTMLonlineSchool.replace(data,course.school);
+                var onlineDate = HTMLonlineDates.replace(data,course.date);
+                var onlineUrl = HTMLonlineURL.replace(data,course.url) ;
                 $('.education-entry:last').append(onlineTitle + onlineSchool + onlineDate + onlineUrl);
-            };
+            });
 
         };
 
@@ -196,25 +198,25 @@
         //Work experience display method: function taking no parameters
         work.display = function() {
 
-            // for-in loop that iterates through all the jobs in work object
-            for(var job in work.jobs) {
+            // forEach loop that iterates through all the jobs array in work object
+            work.jobs.forEach(function(job) {
 
                  // append a new HTMLworkStart  div from helper.js for each job
                  // create a new div with class work-entry for work experience
                  $('#workExperience').append(HTMLworkStart);
 
                  // format each job's employer an title with HTMLworkEmployer and HTMLworkTitle respectively
-                 var emp  = HTMLworkEmployer.replace(data,work.jobs[job].employer);
-                 var workTitle = HTMLworkTitle.replace(data,work.jobs[job].title)
+                 var emp  = HTMLworkEmployer.replace(data,job.employer);
+                 var workTitle = HTMLworkTitle.replace(data,job.title)
 
                  // format each job's employer an title with HTMLworkDates and HTMLworkDescription respectively
-                 var workDate = HTMLworkDates.replace(data,work.jobs[job].dates);
-                 var workDesc = HTMLworkDescription.replace(data,work.jobs[job].description)
+                 var workDate = HTMLworkDates.replace(data,job.dates);
+                 var workDesc = HTMLworkDescription.replace(data,job.description)
 
                  //append  concatenation of employee , workTitle, workDate and WorkDesc for each job to the last element in class work-entry
                  $('.work-entry:last').append(emp + workTitle + workDate + workDesc);
 
-            }
+            });
         };
 
         // Invoke function to display work experience on resume page
@@ -238,30 +240,29 @@
         // Encapsulate display within the projects object
         projects.display  = function() {
 
-            for (var project in projects.projects)  {
-
+            projects.projects.forEach(function(project) {
                 // the dispaly function is the 3rd element in the projects and the for loop was iterating through it to give an undefined element. So put the if condition to check if the title exists
-                if (projects.projects[project].title != undefined) {
+                if (project.title != undefined) {
                     // append a new HTMLprojectStart object from helper.js for each project
 
                    // create a new div with class project-entry for each project
                     $("#projects").append(HTMLprojectStart);
 
                     // format each projects's title with HTMLprojectEmployer , dates HTMLprojectDates , description with HTMLprojectDescription and images with HTMLprojectImages
-                    var pTitle = HTMLprojectTitle.replace(data,projects.projects[project].title);
-                    var pDates = HTMLprojectDates.replace(data,projects.projects[project].dates);
-                    var pDesc = HTMLprojectDescription.replace(data,projects.projects[project].description);
+                    var pTitle = HTMLprojectTitle.replace(data,project.title);
+                    var pDates = HTMLprojectDates.replace(data,project.dates);
+                    var pDesc = HTMLprojectDescription.replace(data,project.description);
 
                     // Looping through the images array.
                     var pImg = "";
-                    for(var j=0 ; j < projects.projects[project].images.length; j++) {
+                    for(var j=0 ; j < project.images.length; j++) {
                         // concatenating the formatted images
-                        pImg = pImg + HTMLprojectImage.replace(data,projects.projects[project].images[j]);
+                        pImg = pImg + HTMLprojectImage.replace(data,project.images[j]);
                     }
 
                     $('.project-entry:last').append(pTitle + pDates + pDesc + pImg);
                 }
-            }
+            });
         };
 
         projects.display();
