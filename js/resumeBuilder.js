@@ -3,52 +3,39 @@
        var data = '%data%';
        var $header = $('#header');
 
-        //Creating variable names to store values
-        var bioName = "Smitha Menon";
-        var role = "Web Developer";
-
-        var mobile = "813-546-0492";
-        var email = "spmenon30@gmail.com";
-        var github = "30mps";
-        var twitter =  "spme30";
-        var bioLocation = "Seattle";
-        var biopic = "images/smitha.jpg"
-        var welcomeMessage = "Multi-skilled Web Application Developer.";
-
-        //Formatting the bio variables using the html strings defined in helper.js
-        var formattedName =  HTMLheaderName.replace(data,bioName);
-        var formattedRole =  HTMLheaderRole.replace(data,role);
-        var formattedMobile = HTMLmobile.replace(data,mobile);
-        var formattedEmail = HTMLemail.replace(data,email);
-        var formattedTwitter = HTMLtwitter.replace(data,twitter);
-        var formattedGithub = HTMLgithub.replace(data,github);
-        var formattedLocation = HTMLlocation.replace(data,bioLocation);
-
-        //skills summary array
-        var skills = ["html5","javascript","css","jquery","bootstrap","git","tcl","perl","python","Sql"];
 
         // bio object
         var bio = {
-                "name": bioName,
-            "role": role,
+            "name": "Smitha Menon",
+            "role": "Web Developer",
             "contacts": {
-                "mobile": formattedMobile,
-                "email": formattedEmail,
-                "github": formattedGithub,
-                "twitter": formattedTwitter,
-                "location": formattedLocation
+                "mobile": "813-546-0493",
+                "email": "spmenon30@gmail.com",
+                "github": "30mps",
+                "twitter": "spme30",
+                "location": "Seattle"
             },
-            "welcomeMessage": welcomeMessage,
-            "skills": skills,
-            "biopic": biopic
+            "welcomeMessage": "Multi-skilled Web Application Developer.",
+            "skills": ["html5","javascript","css","jquery","bootstrap","git","tcl","perl","python","Sql"],
+            "biopic": "images/smitha.jpg"
         };
+
+        //Setting the property in the bio object using the html strings defined in helper.js
+        bio.name =  HTMLheaderName.replace(data,bio.name);
+        bio.role =  HTMLheaderRole.replace(data,bio.role);
+        bio.contacts.mobile = HTMLmobile.replace(data,bio.contacts.mobile);
+        bio.contacts.email = HTMLemail.replace(data,bio.contacts.email);
+        bio.contacts.twitter = HTMLtwitter.replace(data,bio.contacts.twitter);
+        bio.contacts.github = HTMLgithub.replace(data,bio.contacts.github);
+        bio.contacts.location = HTMLlocation.replace(data,bio.contacts.location);
+
 
          //Encapsulate display of bio object in a function taking no parameters
          bio.display = function() {
 
             // Used prepend method in this order to create the design as shown in the sample page
-            $header.prepend(formattedRole);
-            $header.prepend(formattedName);
+            $header.prepend(bio.role);
+            $header.prepend(bio.name);
 
             //Creating contaDetail string using generic HTML contact string from helper.js
             var contactDetail = "";
