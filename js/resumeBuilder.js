@@ -1,4 +1,8 @@
 
+       //For easier reference Storing %data% and the $('#header) jquery object in variables
+       var data = '%data%';
+       var $header = $('#header');
+
         //Creating variable names to store values
         var bioName = "Smitha Menon";
         var role = "Web Developer";
@@ -12,13 +16,13 @@
         var welcomeMessage = "Multi-skilled Web Application Developer.";
 
         //Formatting the bio variables using the html strings defined in helper.js
-        var formattedName =  HTMLheaderName.replace('%data%',bioName);
-        var formattedRole =  HTMLheaderRole.replace('%data%',role);
-        var formattedMobile = HTMLmobile.replace('%data%',mobile);
-        var formattedEmail = HTMLemail.replace('%data%',email);
-        var formattedTwitter = HTMLtwitter.replace('%data%',twitter);
-        var formattedGithub = HTMLgithub.replace('%data%',github);
-        var formattedLocation = HTMLlocation.replace('%data%',bioLocation);
+        var formattedName =  HTMLheaderName.replace(data,bioName);
+        var formattedRole =  HTMLheaderRole.replace(data,role);
+        var formattedMobile = HTMLmobile.replace(data,mobile);
+        var formattedEmail = HTMLemail.replace(data,email);
+        var formattedTwitter = HTMLtwitter.replace(data,twitter);
+        var formattedGithub = HTMLgithub.replace(data,github);
+        var formattedLocation = HTMLlocation.replace(data,bioLocation);
 
         //skills summary array
         var skills = ["html5","javascript","css","jquery","bootstrap","git","tcl","perl","python","Sql"];
@@ -43,8 +47,8 @@
          bio.display = function() {
 
             // Used prepend method in this order to create the design as shown in the sample page
-            $('#header').prepend(formattedRole);
-            $('#header').prepend(formattedName);
+            $header.prepend(formattedRole);
+            $header.prepend(formattedName);
 
             //Creating contaDetail string using generic HTML contact string from helper.js
             var contactDetail = "";
@@ -52,7 +56,7 @@
                 //commenting the generic HTML contact and using the formatted variables described above.
                 //Added font awesome to formatted html
                // var contact = HTMLcontactGeneric.replace('%contact%',info);
-               // contactDetail = contactDetail + contact.replace('%data%',bio.contacts[info]);
+               // contactDetail = contactDetail + contact.replace(data,bio.contacts[info]);
                 contactDetail = contactDetail + bio.contacts[info] ;
 
             }
@@ -63,18 +67,18 @@
             $('#footerContacts').append(contactDetail);
 
             //Adding bio photo and welcome message to resume
-            $('#header').append(HTMLbioPic.replace('%data%',bio.biopic));
-            $('#header').append(HTMLwelcomeMsg.replace('%data%',bio.welcomeMessage));
+            $header.append(HTMLbioPic.replace(data,bio.biopic));
+            $header.append(HTMLwelcomeMsg.replace(data,bio.welcomeMessage));
 
              // Skill summary at a glance
             //Check if there are skills in the bio object
             if(bio.skills.length > 0) {
                 //append HTMLskillsstart declared in helper.js to the div with id=header
-                $('#header').append(HTMLskillsStart);
+                $header.append(HTMLskillsStart);
 
                 for (var i=0; i < bio.skills.length; i++) {
                     // Use HTMLskills from helper.js to format each skill in a <li>
-                    var skillElement =  HTMLskills.replace('%data%',bio.skills[i]);
+                    var skillElement =  HTMLskills.replace(data,bio.skills[i]);
                     // Append each formatted skill to the <ul> tag with id=header in the HTMLskillsStart variable
                     $('#skills').append(skillElement);
                 }
@@ -137,13 +141,13 @@
                  $('#education').append(HTMLschoolStart);
 
                  // format each schools's  name,degree, dates, loaction and major
-                 var schoolName  = HTMLschoolName.replace('%data%',education.schools[school].name);
-                 var schoolDegree = HTMLschoolDegree.replace('%data%',education.schools[school].degree);
-                 var schoolDates = HTMLschoolDates.replace('%data%',education.schools[school].dates);
-                 var schoolLocation = HTMLschoolLocation.replace('%data%',education.schools[school].location)
+                 var schoolName  = HTMLschoolName.replace(data,education.schools[school].name);
+                 var schoolDegree = HTMLschoolDegree.replace(data,education.schools[school].degree);
+                 var schoolDates = HTMLschoolDates.replace(data,education.schools[school].dates);
+                 var schoolLocation = HTMLschoolLocation.replace(data,education.schools[school].location)
                  var schoolMajor = "";
                  for (major in education.schools[school].majors) {
-                    schoolMajor = HTMLschoolMajor.replace('%data%',education.schools[school].majors[major]);
+                    schoolMajor = HTMLschoolMajor.replace(data,education.schools[school].majors[major]);
                  }
                  //append  concatenation of strings of schools's  name,degree, dates, loaction and major
                  $('.education-entry:last').append(schoolName + schoolDegree + schoolDates + schoolLocation + schoolMajor);
@@ -155,10 +159,10 @@
             // for-in loop that iterates through all th online courses
             for(var course in education.onlineCourses) {
 
-                var onlineTitle = HTMLonlineTitle.replace('%data%',education.onlineCourses[course].title);
-                var onlineSchool = HTMLonlineSchool.replace('%data%',education.onlineCourses[course].school);
-                var onlineDate = HTMLonlineDates.replace('%data%',education.onlineCourses[course].date);
-                var onlineUrl = HTMLonlineURL.replace('%data%',education.onlineCourses[course].url) ;
+                var onlineTitle = HTMLonlineTitle.replace(data,education.onlineCourses[course].title);
+                var onlineSchool = HTMLonlineSchool.replace(data,education.onlineCourses[course].school);
+                var onlineDate = HTMLonlineDates.replace(data,education.onlineCourses[course].date);
+                var onlineUrl = HTMLonlineURL.replace(data,education.onlineCourses[course].url) ;
                 $('.education-entry:last').append(onlineTitle + onlineSchool + onlineDate + onlineUrl);
             };
 
@@ -213,12 +217,12 @@
                  $('#workExperience').append(HTMLworkStart);
 
                  // format each job's employer an title with HTMLworkEmployer and HTMLworkTitle respectively
-                 var emp  = HTMLworkEmployer.replace('%data%',work.jobs[job].employer);
-                 var workTitle = HTMLworkTitle.replace('%data%',work.jobs[job].title)
+                 var emp  = HTMLworkEmployer.replace(data,work.jobs[job].employer);
+                 var workTitle = HTMLworkTitle.replace(data,work.jobs[job].title)
 
                  // format each job's employer an title with HTMLworkDates and HTMLworkDescription respectively
-                 var workDate = HTMLworkDates.replace('%data%',work.jobs[job].dates);
-                 var workDesc = HTMLworkDescription.replace('%data%',work.jobs[job].description)
+                 var workDate = HTMLworkDates.replace(data,work.jobs[job].dates);
+                 var workDesc = HTMLworkDescription.replace(data,work.jobs[job].description)
 
                  //append  concatenation of employee , workTitle, workDate and WorkDesc for each job to the last element in class work-entry
                  $('.work-entry:last').append(emp + workTitle + workDate + workDesc);
@@ -257,15 +261,15 @@
                     $("#projects").append(HTMLprojectStart);
 
                     // format each projects's title with HTMLprojectEmployer , dates HTMLprojectDates , description with HTMLprojectDescription and images with HTMLprojectImages
-                    var pTitle = HTMLprojectTitle.replace('%data%',projects.projects[project].title);
-                    var pDates = HTMLprojectDates.replace('%data%',projects.projects[project].dates);
-                    var pDesc = HTMLprojectDescription.replace('%data%',projects.projects[project].description);
+                    var pTitle = HTMLprojectTitle.replace(data,projects.projects[project].title);
+                    var pDates = HTMLprojectDates.replace(data,projects.projects[project].dates);
+                    var pDesc = HTMLprojectDescription.replace(data,projects.projects[project].description);
 
                     // Looping through the images array.
                     var pImg = "";
                     for(var j=0 ; j < projects.projects[project].images.length; j++) {
                         // concatenating the formatted images
-                        pImg = pImg + HTMLprojectImage.replace('%data%',projects.projects[project].images[j]);
+                        pImg = pImg + HTMLprojectImage.replace(data,projects.projects[project].images[j]);
                     }
 
                     $('.project-entry:last').append(pTitle + pDates + pDesc + pImg);
