@@ -230,7 +230,8 @@
         work.display();
 
         //projects object
-        var projects =  [{
+        var projects =  {
+            "projects": [{
             "title": "AWCPS mockup pages",
             "dates": "2015",
             "description": "Created mockup pages for AWCPS",
@@ -240,31 +241,31 @@
             "dates": "2015",
             "description": "A mockup responsive website that will display images, descriptions and links to portfolio projects.",
             "images": ["images/portfolio.png"],
-         }
-        ];
+         }]
+    };
 
         // Encapsulate display within the projects object
         projects.display  = function() {
 
-            for (var project in projects)  {
+            for (var project in projects.projects)  {
 
                 // the dispaly function is the 3rd element in the projects and the for loop was iterating through it to give an undefined element. So put the if condition to check if the title exists
-                if (projects[project].title != undefined) {
+                if (projects.projects[project].title != undefined) {
                     // append a new HTMLprojectStart object from helper.js for each project
 
                    // create a new div with class project-entry for each project
                     $("#projects").append(HTMLprojectStart);
 
                     // format each projects's title with HTMLprojectEmployer , dates HTMLprojectDates , description with HTMLprojectDescription and images with HTMLprojectImages
-                    var pTitle = HTMLprojectTitle.replace('%data%',projects[project].title);
-                    var pDates = HTMLprojectDates.replace('%data%',projects[project].dates);
-                    var pDesc = HTMLprojectDescription.replace('%data%',projects[project].description);
+                    var pTitle = HTMLprojectTitle.replace('%data%',projects.projects[project].title);
+                    var pDates = HTMLprojectDates.replace('%data%',projects.projects[project].dates);
+                    var pDesc = HTMLprojectDescription.replace('%data%',projects.projects[project].description);
 
                     // Looping through the images array.
                     var pImg = "";
-                    for(var j=0 ; j < projects[project].images.length; j++) {
+                    for(var j=0 ; j < projects.projects[project].images.length; j++) {
                         // concatenating the formatted images
-                        pImg = pImg + HTMLprojectImage.replace('%data%',projects[project].images[j]);
+                        pImg = pImg + HTMLprojectImage.replace('%data%',projects.projects[project].images[j]);
                     }
 
                     $('.project-entry:last').append(pTitle + pDates + pDesc + pImg);
