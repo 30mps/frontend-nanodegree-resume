@@ -235,21 +235,14 @@
         "title": "AWCPS mockup pages",
         "dates": "2015",
         "description": "Created mockup pages for AWCPS",
-        "images": ["http://spinsight.github.io/awcps/index-test.html" , "http://spinsight.github.io/awcps/home.html"],
+        "images": ["images/awcps1.png" , "images/awcps2.png"],
      }, {
         "title": "Portfolio Site",
         "dates": "2015",
         "description": "A mockup responsive website that will display images, descriptions and links to portfolio projects.",
-        "images": ["http://30mps.github.io/portfolio-site/"],
+        "images": ["images/portfolio.png"],
      }
     ];
-
-    /*, {
-        "title": "",
-        "dates": "",
-        "description": "",
-        "images": [""]
-     } */
 
     // Encapsulate display within the projects object
     projects.display  = function() {
@@ -274,6 +267,7 @@
                 for(j=0 ; j < projects[project].images.length; j++) {
                     // concatenating the formatted images
                     pImg = pImg + HTMLprojectImage.replace('%data%',projects[project].images[j]);
+                    console.log(pImg);
                 }
 
                 $('.project-entry:last').append(pTitle + pDates + pDesc + pImg);
