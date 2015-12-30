@@ -20,18 +20,20 @@
                 "biopic": "images/smitha.jpg"
             };
 
-            //Setting the property in the bio object using the html strings defined in helper.js
-            bio.name =  HTMLheaderName.replace(data,bio.name);
-            bio.role =  HTMLheaderRole.replace(data,bio.role);
-            bio.contacts.mobile = HTMLmobile.replace(data,bio.contacts.mobile);
-            bio.contacts.email = HTMLemail.replace(data,bio.contacts.email);
-            bio.contacts.twitter = HTMLtwitter.replace(data,bio.contacts.twitter);
-            bio.contacts.github = HTMLgithub.replace(data,bio.contacts.github);
-            bio.contacts.location = HTMLlocation.replace(data,bio.contacts.location);
 
 
              //Encapsulate display of bio object in a function taking no parameters
              bio.display = function() {
+
+                //Setting the property in the bio object using the html strings defined in helper.js
+                bio.name =  HTMLheaderName.replace(data,bio.name);
+                bio.role =  HTMLheaderRole.replace(data,bio.role);
+                bio.contacts.mobile = HTMLmobile.replace(data,bio.contacts.mobile);
+                bio.contacts.email = HTMLemail.replace(data,bio.contacts.email);
+                bio.contacts.twitter = HTMLtwitter.replace(data,bio.contacts.twitter);
+                bio.contacts.github = HTMLgithub.replace(data,bio.contacts.github);
+                bio.contacts.location = HTMLlocation.replace(data,bio.contacts.location);
+
 
                 // Used prepend method in this order to create the design as shown in the sample page
                 $header.prepend(bio.role);
