@@ -82,7 +82,7 @@
     .welcome-message {
       font-style: italic;
       font-size: 18px;
-      color: #F3F3F3;
+      color: #f3f3f3;
       line-height: 28px;
     }
 
@@ -115,7 +115,6 @@
       background-color: #4A4A4A;
     }
 
-    /* TODO: Replace with image later */
     #header {
       /*background-color: #484848;
       */
@@ -232,7 +231,3 @@
       color: white;
     }
 
-    .jumbotron {
-      background-color: #f4511e; /* Orange */
-      color: #ffffff;
-  }
