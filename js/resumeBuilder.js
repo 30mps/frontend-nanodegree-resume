@@ -65,7 +65,8 @@
                     //append HTMLskillsstart declared in helper.js to the div with id=header
                     $header.append(HTMLskillsStart);
 
-                    for (var i=0; i < bio.skills.length; i++) {
+                    // storing length of array in variable len so the array's length property is not accessed to check its value at each iteration. (i.e. more efficiency)
+                    for (var i=0, len = bio.skills.length; i< len; i++) {
                         // Use HTMLskills from helper.js to format each skill in a <li>
                         var skillElement =  HTMLskills.replace(data,bio.skills[i]);
                         // Append each formatted skill to the <ul> tag with id=header in the HTMLskillsStart variable
@@ -259,7 +260,9 @@
 
                         // Looping through the images array.
                         var pImg = "";
-                        for(var j=0 ; j < project.images.length; j++) {
+
+                        // storing length of array in variable len so the array's length property is not accessed to check its value at each iteration. (i.e. more efficiency)
+                        for(var j=0 , len = project.images.length; j < len; j++) {
                             // concatenating the formatted images
                             pImg = pImg + HTMLprojectImage.replace(data,project.images[j]);
                         }
