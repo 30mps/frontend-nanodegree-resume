@@ -5,18 +5,18 @@ var $header = $('#header');
 
 // bio object
 var bio = {
-    "name": "Smitha Menon",
-    "role": "Web Developer",
-    "contacts": {
-        "mobile": "813-546-0493",
-        "email": "spmenon30@gmail.com",
-        "github": "30mps",
-        "twitter": "spme30",
-        "location": "Seattle"
+    'name': 'Smitha Menon',
+    'role': 'Web Developer',
+    'contacts': {
+        'mobile': '813-546-0493',
+        'email': 'spmenon30@gmail.com',
+        'github': '30mps',
+        'twitter': 'spme30',
+        'location': 'Seattle'
     },
-    "welcomeMessage": "Multi-skilled Web Application Developer.",
-    "skills": ["html5", "javascript", "css", "jquery", "bootstrap", "git", "tcl", "perl", "python", "Sql"],
-    "biopic": "images/smitha.jpg"
+    'welcomeMessage': 'Multi-skilled Web Application Developer.',
+    'skills': ['html5', 'javascript', 'css', 'jquery', 'bootstrap', 'git', 'tcl', 'perl', 'python', 'Sql'],
+    'biopic': 'images/smitha.jpg'
 };
 
 
@@ -39,7 +39,7 @@ bio.display = function() {
     $header.prepend(bio.name);
 
     //Creating contaDetail string using generic HTML contact string from helper.js
-    var contactDetail = "";
+    var contactDetail = '';
     for (var info in bio.contacts) {
         //commenting the generic HTML contact and using the formatted variables described above.
         //Added font awesome to formatted html
@@ -78,45 +78,45 @@ bio.display();
 
 // education object
 var education = {
-    "schools": [{
-        "name": "University of Washington Professional and Continuing Education",
-        "location": "Seattle, WA",
-        "degree": "Certificate",
-        "majors": ["Cloud Data Management & Analytics"],
-        "dates": "2014",
-        "url": "http://www.pce.uw.edu/certificates/cloud-data-management-analytics.html"
+    'schools': [{
+        'name': 'University of Washington Professional and Continuing Education',
+        'location': 'Seattle, WA',
+        'degree': 'Certificate',
+        'majors': ['Cloud Data Management & Analytics'],
+        'dates': '2014',
+        'url': 'http://www.pce.uw.edu/certificates/cloud-data-management-analytics.html'
     }, {
-        "name": "Bellevue College",
-        "location": "Bellevue, WA",
-        "degree": "Certificate",
-        "majors": ["Business Intelligence Developer Certificate"],
-        "dates": "2011",
-        "url": "http://www.bellevuecollege.edu/programs/degrees/proftech/busit/"
+        'name': 'Bellevue College',
+        'location': 'Bellevue, WA',
+        'degree': 'Certificate',
+        'majors': ['Business Intelligence Developer Certificate'],
+        'dates': '2011',
+        'url': 'http://www.bellevuecollege.edu/programs/degrees/proftech/busit/'
     }, {
-        "name": "Center for Development of Advanced Computing",
-        "location": "Karad, India",
-        "degree": "Diploma",
-        "majors": ["Diploma in Advanced Computing"],
-        "dates": "1999",
-        "url": "http://cdac.in/index.aspx?id=DAC&courseid=0"
+        'name': 'Center for Development of Advanced Computing',
+        'location': 'Karad, India',
+        'degree': 'Diploma',
+        'majors': ['Diploma in Advanced Computing'],
+        'dates': '1999',
+        'url': 'http://cdac.in/index.aspx?id=DAC&courseid=0'
     }, {
-        "name": "University of Pune",
-        "location": "Pune",
-        "degree": "Bachelors in Engineering",
-        "majors": ["Electronics and Telecommunication"],
-        "dates": "1998",
-        "url": "http://cumminscollege.org/about-engineering-college/engineering-college/"
+        'name': 'University of Pune',
+        'location': 'Pune',
+        'degree': 'Bachelors in Engineering',
+        'majors': ['Electronics and Telecommunication'],
+        'dates': '1998',
+        'url': 'http://cumminscollege.org/about-engineering-college/engineering-college/'
     }],
-    "onlineCourses": [{
-        "title": "Nanodegree Front End Web Developer",
-        "school": "Udacity",
-        "date": "Current",
-        "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+    'onlineCourses': [{
+        'title': 'Nanodegree Front End Web Developer',
+        'school': 'Udacity',
+        'date': 'Current',
+        'url': 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
     }, {
-        "title": "How to Use Git and GitHub",
-        "school": "Udacity",
-        "date": "2015",
-        "url": "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
+        'title': 'How to Use Git and GitHub',
+        'school': 'Udacity',
+        'date': '2015',
+        'url': 'https://www.udacity.com/course/how-to-use-git-and-github--ud775'
     }]
 };
 
@@ -134,7 +134,7 @@ education.display = function() {
         var schoolDegree = HTMLschoolDegree.replace(data, school.degree);
         var schoolDates = HTMLschoolDates.replace(data, school.dates);
         var schoolLocation = HTMLschoolLocation.replace(data, school.location)
-        var schoolMajor = "";
+        var schoolMajor = '';
 
         //Looping through the education majors array using forEach
         school.majors.forEach(function(major) {
@@ -165,36 +165,36 @@ education.display();
 
 // work object
 var work = {
-    "jobs": [{
-        "employer": "AWCPS",
-        "title": "Webmaster",
-        "location": "Bellevue, WA",
-        "dates": "October 2015 - Current",
-        "description": "Understand requirements for AWC web presence and social media outreach, review current strategy and chart alternate strategy recommendation based on AWC requirements. "
+    'jobs': [{
+        'employer': 'AWCPS',
+        'title': 'Webmaster',
+        'location': 'Bellevue, WA',
+        'dates': 'October 2015 - Current',
+        'description': 'Understand requirements for AWC web presence and social media outreach, review current strategy and chart alternate strategy recommendation based on AWC requirements. '
     }, {
-        "employer": "University of Washington",
-        "title": "Teaching/Lab Assistant, Continuing Education",
-        "location": "Seattle, WA",
-        "dates": "May 2015 - Current",
-        "description": "Teaching Assistant for the multiple UW courses: 'HTML5, CSS3 & Responsive Design for Web Development' and 'Supporting Scalable Analytics in Cloud'.  Responsible for managing online student interactions during class, assisting the professor in evaluating assignments, setting up and conducting online lecture sessions in coordination with facilities, and helping students troubleshoot issues with courseware."
+        'employer': 'University of Washington',
+        'title': 'Teaching/Lab Assistant, Continuing Education',
+        'location': 'Seattle, WA',
+        'dates': 'May 2015 - Current',
+        'description': 'Teaching Assistant for the multiple UW courses: "HTML5, CSS3 & Responsive Design for Web Development" and "Supporting Scalable Analytics in Cloud".  Responsible for managing online student interactions during class, assisting the professor in evaluating assignments, setting up and conducting online lecture sessions in coordination with facilities, and helping students troubleshoot issues with courseware.'
     }, {
-        "employer": "Netcore Solutions",
-        "title": "Project Lead",
-        "location": "Mumbai, India",
-        "dates": "Feb 2005 - June 2006",
-        "description": "Led software development lifecycle for an in-house mobile CMS (content management) site. Managed stakehol ders, development team, product roadmap and delivered software releases. Advocated open source web technologies for building the product. Performed requirement analysis, prototyping, effort estimation, usability design and data modeling for product. "
+        'employer': 'Netcore Solutions',
+        'title': 'Project Lead',
+        'location': 'Mumbai, India',
+        'dates': 'Feb 2005 - June 2006',
+        'description': 'Led software development lifecycle for an in-house mobile CMS (content management) site. Managed stakehol ders, development team, product roadmap and delivered software releases. Advocated open source web technologies for building the product. Performed requirement analysis, prototyping, effort estimation, usability design and data modeling for product. '
     }, {
-        "employer": "Softcell Technologies",
-        "title": "Software Engineer",
-        "location": "Pune, India",
-        "dates": "Sep 2002 - Nov 2003",
-        "description": "Transitioned paper-based work flow and inventory management to an automated web-based business process with security roles, permissions, workflows and email activity alerts. Responsible for documenting requirements, project scope, schedules, database design and technology implementation using - Java, JDBC, JSP, JavaScript, HTML, Oracle 9i, Apache on Linux systems. "
+        'employer': 'Softcell Technologies',
+        'title': 'Software Engineer',
+        'location': 'Pune, India',
+        'dates': 'Sep 2002 - Nov 2003',
+        'description': 'Transitioned paper-based work flow and inventory management to an automated web-based business process with security roles, permissions, workflows and email activity alerts. Responsible for documenting requirements, project scope, schedules, database design and technology implementation using - Java, JDBC, JSP, JavaScript, HTML, Oracle 9i, Apache on Linux systems. '
     }, {
-        "employer": "Thinking Minds Inc.",
-        "title": "Software Engineer",
-        "location": "Nashik, India",
-        "dates": "Jan 2000 - Sep 2002",
-        "description": "Built custom reports for student administration for University of Rhode Island using Peoplecode and PeopleSoft Designer.  Built system to boost search engine rankings using doorway pages. Built company website using -- TCL, Oracle, ACS Web Framework. "
+        'employer': 'Thinking Minds Inc.',
+        'title': 'Software Engineer',
+        'location': 'Nashik, India',
+        'dates': 'Jan 2000 - Sep 2002',
+        'description': 'Built custom reports for student administration for University of Rhode Island using Peoplecode and PeopleSoft Designer.  Built system to boost search engine rankings using doorway pages. Built company website using -- TCL, Oracle, ACS Web Framework. '
     }]
 };
 
@@ -228,16 +228,16 @@ work.display();
 
 //projects object
 var projects = {
-    "projects": [{
-        "title": "AWCPS mockup pages",
-        "dates": "2015",
-        "description": "Created mockup pages for AWCPS",
-        "images": ["images/awcps1.png", "images/awcps2.png"],
+    'projects': [{
+        'title': 'AWCPS mockup pages',
+        'dates': '2015',
+        'description': 'Created mockup pages for AWCPS',
+        'images': ['images/awcps1.png', 'images/awcps2.png'],
     }, {
-        "title": "Portfolio Site",
-        "dates": "2015",
-        "description": "A mockup responsive website that will display images, descriptions and links to portfolio projects.",
-        "images": ["images/portfolio.png"],
+        'title': 'Portfolio Site',
+        'dates': '2015',
+        'description': 'A mockup responsive website that will display images, descriptions and links to portfolio projects.',
+        'images': ['images/portfolio.png'],
     }]
 };
 
@@ -250,7 +250,7 @@ projects.display = function() {
             // append a new HTMLprojectStart object from helper.js for each project
 
             // create a new div with class project-entry for each project
-            $("#projects").append(HTMLprojectStart);
+            $('#projects').append(HTMLprojectStart);
 
             // format each projects's title with HTMLprojectEmployer , dates HTMLprojectDates , description with HTMLprojectDescription and images with HTMLprojectImages
             var pTitle = HTMLprojectTitle.replace(data, project.title);
@@ -258,7 +258,7 @@ projects.display = function() {
             var pDesc = HTMLprojectDescription.replace(data, project.description);
 
             // Looping through the images array.
-            var pImg = "";
+            var pImg = '';
 
             // storing length of array in variable len so the array's length property is not accessed to check its value at each iteration. (i.e. more efficiency)
             for (var j = 0, len = project.images.length; j < len; j++) {
