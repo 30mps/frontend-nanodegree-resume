@@ -57,11 +57,20 @@
 
       var HTMLonlineClasses = '<h3>Online Classes</h3>';
       //var HTMLonlineTitle = '<a href="#">%data%';
-      var HTMLonlineURL = '<div><a href="%data%" target="_blank">';
+      //var HTMLonlineURL = '<div><a href="%data%" target="_blank">';
+
+
+
+
+
+      //var HTMLonlineURL = '<div><a data-toggle="modal"  href="http://spinsight.github.io/awcps/home.html" data-target="#myModal">';
+
+      var HTMLonlineURL = '<div><a class="simi" data-toggle="modal" data-target="#myModal" data-load-remote="http://spinsight.github.io/awcps/home.html">';
       var HTMLonlineTitle = '%data%';
       var HTMLonlineSchool = ' - %data%</a></div>';
       var HTMLonlineDates = '<div>%data%</div>';
       //var HTMLonlineURL = '<br><a href="#">%data%</a>';
+      //<a class="btn btn-lg btn-default" data-toggle="modal" data-target="#largeModal" data-remote="remote-page.html">Click to open Modal</a>
 
       var internationalizeButton = '<button>Internationalize</button>';
       var googleMap = '<div id="map"></div>';
@@ -84,10 +93,10 @@
 
       function logClicks(x,y) {
         clickLocations.push(
-          {
-            x: x,
-            y: y
-          }
+        {
+          x: x,
+          y: y
+        }
         );
         console.log('x location: ' + x + '; y location: ' + y);
       }
@@ -179,7 +188,7 @@
             content: name
 
           });
-      0
+          0
           // Add an overlay with the name of each city that will appear when a user clicks on your map.
           google.maps.event.addListener(marker, 'click', function() {
             //display overlays

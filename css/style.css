@@ -231,3 +231,8 @@
       color: white;
     }
 
+    .modal-dialog {width:600px;}
+   .simi {
+    margin-bottom:6px;
+      color:green;
+   }
